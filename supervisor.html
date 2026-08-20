@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel de Espacios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="ejercicio 2/css/supervisor.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+
+      <!-- Usuario -->
+      <div class="user-block">
+        <div class="avatar" id="userInitial">N</div>
+        <div>
+          <p class="user-label">Sesión activa</p>
+          <p class="user-name font-display" id="userName">Nicolas</p>
+        </div>
+      </div>
+
+
+    </div>
+  </header>
+
+  <!-- CONTENIDO CENTRAL -->
+  <main>
+    <h1 class="main-title font-display">Panel de espacios</h1>
+    <p class="main-subtitle">Selecciona o quita espacios desde el header. El contenido de cada uno se muestra aquí.</p>
+
+    <div class="content-grid" id="contentGrid">
+
+      <section class="space-card" id="space-1">
+            <div class="card-header">
+                <span class="dot"></span>
+                <h2 class="card-title font-display">Gestión de Empleados</h2>
+            </div>
+
+            <p class="card-text">
+                El supervisor puede consultar empleados, revisar horarios,
+                asignar tareas y verificar el estado de las actividades.
+            </p>
+        </section>
+
+        <section class="space-card" id="space-2">
+            <div class="card-header">
+                <span class="dot"></span>
+                <h2 class="card-title font-display">Control de Inventario</h2>
+            </div>
+
+            <p class="card-text">
+                Permite visualizar materiales disponibles, existencias mínimas
+                y solicitudes pendientes de reposición.
+            </p>
+        </section>
+
+      <section class="space-card" id="space-3">
+          <div class="card-header">
+              <span class="dot"></span>
+              <h2 class="card-title font-display">Reportes</h2>
+          </div>
+
+          <p class="card-text">
+              Consulta indicadores, productividad del personal y reportes
+              generados durante el periodo seleccionado.
+          </p>
+      </section>
+
+    </div>
+
+    <p class="empty-state" id="emptyState">No hay espacios seleccionados. Actívalos desde el header.</p>
+  </main>
+
+</body>
+</html>
