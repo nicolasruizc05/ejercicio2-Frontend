@@ -1,6 +1,6 @@
 // Función para alternar vistas
 function cargarLideres() {
-    // Leemos la lista global "usuarios" que guardó el registro
+    // Leemos la lista global usuarios que guardó el registro
     var usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
     var comboLideres = document.getElementById("lider");
 
@@ -30,8 +30,8 @@ function mostrarEquipo(opcion) {
 
     } else if (opcion === 'ver') {
         formulario.style.display = "none";
-        tablaEquipos.style.display = "block"; // Despliega la tabla
-        mostrarEquipos();                     // Carga y pinta los datos
+        tablaEquipos.style.display = "block"; 
+        mostrarEquipos();                     
     }
 }
 
@@ -48,7 +48,7 @@ function mostrarEquipos() {
 
     }
 
-    // Ciclo FOR para renderizar cada fila
+    // para renderizar cada fila
     for (var i = 0; i < equipos.length; i++) {
         tabla.innerHTML += "<tr>" +
             "<td>" + equipos[i].nombre + "</td>" +
