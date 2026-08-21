@@ -33,7 +33,7 @@ function guardar() {
     usuarios.push(nuevoUsuario);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-    alert("¡Usuario registrado con éxito!");
+    alert("Usuario registrado con éxito");
 
     // Limpiar formulario
     document.getElementById("nombre").value = "";
