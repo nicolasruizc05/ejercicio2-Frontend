@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Panel de Espacios</title>
+<title>Panle supervisor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="ejercicio 2/css/supervisor.css" rel="stylesheet">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="header-inner">
 
@@ -19,6 +18,7 @@
         <div>
           <p class="user-label">Sesión activa</p>
           <p class="user-name font-display" id="userName">Nicolas</p>
+          <p class="user-rol">Supervisor</p>
         </div>
       </div>
 
@@ -26,10 +26,10 @@
     </div>
   </header>
 
-  <!-- CONTENIDO CENTRAL -->
+  <!-- contenido -->
   <main>
-    <h1 class="main-title font-display">Panel de espacios</h1>
-    <p class="main-subtitle">Selecciona o quita espacios desde el header. El contenido de cada uno se muestra aquí.</p>
+    <h1 class="main-title font-display">Panel del supervisor</h1>
+    <p class="main-subtitle">Administra y supervisa el funcionamiento del área mediante el control de equipos, el seguimiento de actividades y la consulta de reportes</p>
 
     <div class="content-grid" id="contentGrid">
 
@@ -40,9 +40,42 @@
             </div>
 
             <p class="card-text">
-                El supervisor puede consultar empleados, revisar horarios,
-                asignar tareas y verificar el estado de las actividades.
+                Administra y supervisa los equipos de trabajo, consulta su información y verifica el estado de cada equipo.
             </p>
+
+            <br><br>
+
+            <div class="opciones-tarejata">
+              <button type="button" onclick="mostrarEquipo('crear')">Crear equipo</button>
+              <button type="button" onclick="verEquipo('ver')">Ver equipo</button>
+            </div>
+
+            <br><br>
+
+            <div id="vista-crear-equipo" class="form-container" style="display: none;">
+              <input type="text" id="nombre" placeholder="nombre del equipo"><br><br>
+              <select id="lider">
+                <option value="">Selecciona un líder...</option>
+              </select>
+              <br><br>
+              <button type="button" onclick="guardar()">guardar equipo</button><br>
+
+            </div>
+
+            <div id="vista-ver-equipo" style="display: none;">
+              <br>
+              <table border="1">
+                <thead>
+                  <tr>
+                    <th>Equipo</th>
+                    <th>Lider</th>
+                  </tr>
+                </thead>
+                <tbody id="tabla-equipos"></tbody>
+              </table>
+
+            </div>
+  
         </section>
 
         <section class="space-card" id="space-2">
@@ -52,8 +85,7 @@
             </div>
 
             <p class="card-text">
-                Permite visualizar materiales disponibles, existencias mínimas
-                y solicitudes pendientes de reposición.
+                Supervisa el avance de las actividades asignadas, consulta su estado y verifica el cumplimiento de las tareas programadas.
             </p>
         </section>
 
@@ -73,6 +105,8 @@
 
     <p class="empty-state" id="emptyState">No hay espacios seleccionados. Actívalos desde el header.</p>
   </main>
+
+  <script src="ejercicio 2/js/supervisor.js"></script>
 
 </body>
 </html>
