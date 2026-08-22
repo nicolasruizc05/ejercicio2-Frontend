@@ -46,7 +46,7 @@
             <br><br>
 
             <div class="opciones-tarejata">
-              <button type="button" onclick="mostrarEquipo('crear')">Crear equipo</button>
+              <button type="button" onclick="verEquipo('crear')">Crear equipo</button>
               <button type="button" onclick="verEquipo('ver')">Ver equipo</button>
             </div>
 
@@ -87,6 +87,52 @@
             <p class="card-text">
                 Supervisa el avance de las actividades asignadas, consulta su estado y verifica el cumplimiento de las tareas programadas.
             </p>
+            <BR></BR>
+
+            <div class="card-action">
+              <button type="button" onclick="mostrarActividad('crear')">Asignar Actividad</button>
+              <button type="button" onclick="verActividad('ver')">ver actividad</button>
+            </div>
+
+
+            <div id="vista-crear-actividad" class="form-container" style="display: none;">
+              <h3>Asignar Nueva Actividad</h3>
+
+              <input type="text" id="titulo-actividad" placeholder="Titulo de la actividad"><br><br>
+              <textarea  id="descripcion de actividad" placeholder="Descripcion de la actividad"></textarea><br><br>
+
+              <select id="responsable-actividad">
+                <option value="">Selecciona el responsable..</option>
+              </select><br><br>
+              <input type="date" id="fecha-limite"><br><br>
+
+              <button type="button" onclick="guardadActividad()">Guardad actividad</button>
+
+            </div>
+
+            <div id="vista-ver-actividad" style="display: none;">
+              <h3>lista de actividades</h3>
+              <table border="1">
+                <thead>
+                  <tr>
+                    <th>Titulo</th>
+                    <th>Descripcion</th>
+                    <th>Responsable</th>
+                    <th>fecha limite</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody id="Tabla-actividades">
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+
+
+          
         </section>
 
       <section class="space-card" id="space-3">

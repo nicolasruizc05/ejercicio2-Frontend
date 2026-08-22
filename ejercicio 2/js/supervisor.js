@@ -16,15 +16,13 @@ function cargarLideres() {
          '</option>';
     }
 }
-function mostrarEquipo(opcion) {
+function verEquipo(opcion) {
     var formulario = document.getElementById("vista-crear-equipo");
     var tablaEquipos = document.getElementById("vista-ver-equipo");
 
     if (opcion === 'crear') {
         formulario.style.display = "block";
         tablaEquipos.style.display = "none";
-
-        alert("Equipo creado")
 
         cargarLideres();
 
@@ -33,6 +31,36 @@ function mostrarEquipo(opcion) {
         tablaEquipos.style.display = "block"; 
         mostrarEquipos();                     
     }
+}
+
+function guardar(){
+    var nombreEquipo =document.getElementById("nombre").value;
+    var liderEquipo =document.getElementById("lider").value;
+
+    if(nombreEquipo === "" || liderEquipo=== ""){
+        alert("porfavor completa todos los campos ");
+        return;
+
+    }
+
+    var equipos = JSON.parse(localStorage.getItem("equipos")) || [];
+    var nuevoEquipo ={
+        id:Date.now(),
+        nombre:nombreEquipo,
+        lider: liderEquipo
+
+    };
+
+    equipos.push(nuevoEquipo);
+    localStorage.setItem("equipos", JSON.stringify(equipos));
+
+    alert("equipo guardado con exito ")
+
+    document.getElementById("nombre").value="";
+    document.getElementById("lider").value="";
+    document.getElementById("vista-crear-equipo").style.display = "none";
+
+    
 }
 
 // Función que pinta los datos en la tabla
