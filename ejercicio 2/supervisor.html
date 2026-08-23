@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panle supervisor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="css/supervisor.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+
+      <!-- Usuario -->
+      <div class="user-block">
+        <div class="avatar" id="userInitial"></div>
+        <div>
+          <p class="user-label">Sesión activa</p>
+          <p class="user-name font-display" id="userName"><span id="nombreEmpleado"></span></p>
+          <p class="user-rol"><span id="cargoEmpleado" ></span></p>
+        </div>
+        <button class="cierre" onclick="cerrarSesion()">Cerrar Sesion</button>
+        <a id="cerrar" href="login.html"></a>
+      </div>
+
+
+    </div>
+  </header>
+
+  <!-- contenido -->
+  <main>
+    <h1 class="main-title font-display">Panel del supervisor</h1>
+    <p class="main-subtitle">Administra y supervisa el funcionamiento del área mediante el control de equipos, el seguimiento de actividades y la consulta de reportes</p>
+
+    <div class="content-grid" id="contentGrid">
+
+      <section class="space-card" id="space-1">
+            <div class="card-header">
+                <span class="dot"></span>
+                <h2 class="card-title font-display">Control de Equipos</h2>
+            </div>
+
+            <p class="card-text">
+                Administra y supervisa los equipos de trabajo, consulta su información y verifica el estado de cada equipo.
+            </p>
+
+            <br><br>
+
+            <div class="opciones-tarejata">
+              <button type="button" onclick="verEquipo('crear')">Crear equipo</button>
+              <button type="button" onclick="verEquipo('ver')">Ver equipo</button>
+            </div>
+
+            <br><br>
+
+            <div id="vista-crear-equipo" class="form-container" style="display: none;">
+              <input type="text" id="nombre" placeholder="nombre del equipo"><br><br>
+              <select id="lider">
+                <option value="">Selecciona un líder...</option>
+              </select>
+              <br><br>
+              <button type="button" onclick="guardar()">guardar equipo</button><br>
+
+            </div>
+
+            <div id="vista-ver-equipo" style="display: none;">
+              <br>
+              <table border="1">
+                <thead>
+                  <tr>
+                    <th>Equipo</th>
+                    <th>Lider</th>
+                  </tr>
+                </thead>
+                <tbody id="tabla-equipos"></tbody>
+              </table>
+
+            </div>
+  
+        </section>
+
+        <section class="space-card" id="space-2">
+          <div class="card-header">
+              <span class="dot"></span>
+              <h2 class="card-title font-display">Seguimiento de Actividades</h2>
+          </div>
+
+          <p class="card-text">
+              Supervisa el avance de las actividades asignadas, consulta su estado y verifica el cumplimiento de las tareas programadas.
+          </p>
+          <br>
+
+          
+          <div class="card-action">
+            <button type="button" onclick="mostrarActividad('crear')">Asignar Actividad</button>
+            <button type="button" onclick="mostrarActividad('ver')">Ver Actividad</button>
+          </div><br><br>
+
+          <div id="vista-crear-actividad" class="form-container" style="display: none;">
+            <h3>Asignar Nueva Actividad</h3><br>
+
+            <input type="text" id="titulo-actividad" placeholder="Título de la actividad"><br><br>
+            
+            
+            <textarea id="descripcion-actividad" placeholder="Descripción de la actividad"></textarea><br><br>
+
+            <select id="responsable-actividad">
+              <option value="">Selecciona el responsable...</option>
+            </select><br><br>
+            
+            <input type="date" id="fecha-limite"><br><br>
+
+            
+            <button type="button" onclick="guardarActividad()">Guardar actividad</button>
+          </div>
+
+          <div id="vista-ver-actividad" style="display: none;">
+            <h3>Lista de actividades</h3>
+            <table border="1">
+              <thead>
+                <tr>
+                  <th>Título</th>
+                  <th>Descripción</th>
+                  <th>Responsable</th>
+                  <th>Fecha Límite</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              
+              <tbody id="tabla-actividades"></tbody>
+            </table>
+          </div>
+      </section>
+
+      <section class="space-card" id="space-3">
+        <div class="card-header">
+            <span class="dot"></span>
+            <h2 class="card-title font-display">Reportes del área</h2>
+        </div>
+
+        <p class="card-text">
+            Consulta indicadores, productividad del personal y reportes
+            generados durante el periodo seleccionado.
+        </p>
+
+        <!-- Indicador rápido de productividad / personal -->
+        <div class="card-stats" style="margin: 15px 0;">
+            <p><strong>Personal en área:</strong> <span id="cant-productividad">0</span> usuarios</p>
+        </div>
+
+        <!-- Botón de acción para consultar o generar el informe -->
+        <button type="button" class="btn-card" onclick="generarInformeArea()">
+            Ver Indicadores
+        </button>
+
+        <!-- Contenedor dinámico donde se desplegarán los datos -->
+        <div id="resultado-reporte-area" style="margin-top: 15px;"></div>
+    </section>
+
+    </div>
+
+    <p class="empty-state" id="emptyState">No hay espacios seleccionados. Actívalos desde el header.</p>
+  </main>
+
+  <script src="js/supervisor.js"></script>
+
+</body>
+</html>

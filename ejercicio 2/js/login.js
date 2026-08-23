@@ -33,7 +33,12 @@ const iniciar = () => {
 
                 document.getElementById("enlaceEmpleado").click()
             }
-
+            usuarioLogeado={
+                nombre:usuarios[i].nombre,
+                apellido:usuarios[i].apellido,
+                email:dEmail
+            }
+            localStorage.setItem("usuarioLogeado",JSON.stringify(usuarioLogeado))
             break
         }
     }

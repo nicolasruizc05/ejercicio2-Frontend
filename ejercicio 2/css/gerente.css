@@ -84,6 +84,9 @@
     font-weight: bolder;
     cursor: pointer;
   }
+  a{
+    display: none;
+  }
 
   /* ---------- BOTONES DE ESPACIOS ---------- */
   .space-toggles{

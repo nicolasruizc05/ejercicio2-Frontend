@@ -1,0 +1,65 @@
+ :root{
+    --ink: #1F2333;
+    --paper: #2B3A67;
+    --panel: #FFFFFF;
+    --indigo: #2B3A67;
+    --indigo-light: #B9C2E0;
+    --amber: #F2A541;
+    --line: #E4E0D6;
+    --gray: #6B7280;
+}
+
+
+body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: Arial, sans-serif;
+    margin: 30px;
+}
+
+
+div {
+    background-color: var(--panel);
+    border: 1px solid var(--line);
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+
+h1 {
+    color: var(--indigo);
+}
+
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: var(--gray);
+}
+
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid var(--line);
+    background-color: var(--panel);
+    color: var(--ink);
+}
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: var(--amber);
+    color: var(--panel);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a{
+    display: none;
+}

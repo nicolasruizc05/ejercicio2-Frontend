@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/register.css">
+    <title>Trabajo empresa</title>
+</head>
+
+<body>
+    <div>
+        <h1>REGISTRATE</h1>
+        <label for="nombre">ingrese nombre</label>
+        <input id="nombre" placeholder="ingerse nombre">
+        <label for="apellido">ingrese su apellido</label>
+        <input id="apellido" placeholder="ingerse appellido">
+        <label for="cargo">¿cual es su cargo?</label>
+        <select id="cargo" nombre="cargo">
+            <option value="empleado">empelado</option>
+            <option value="gerente">gerente</option>
+            <option value="supervisor">supervisor</option>
+        </select>
+        <label for="area">ingrese su area</label>
+        <input id="area" placeholder="ingrese su area">
+        <label for="correo">ingrese su correo</label>
+        <input id="correo" placeholder="ingrese su correo">
+        <label for="password">ingrese su contraseña</label>
+        <input id="password" placeholder="ingrese su contraseña">
+
+
+    
+        
+        <button onclick="guardar()">Registrarse</button>
+        <button onclick="vuelvesesion()">volver al inicio de sesion</button>
+        <a id="login" href="login.html"></a>
+    </div>
+    <script src="js/register.js"></script>
+
+
+</body>
+
+</html>
