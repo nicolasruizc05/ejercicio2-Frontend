@@ -59,3 +59,7 @@ button {
     font-weight: bold;
     cursor: pointer;
 }
+
+a{
+    display: none;
+}
