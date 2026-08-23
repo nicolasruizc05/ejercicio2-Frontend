@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Gerente</title>
+<link href="css/gerente.css" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+
+      <!-- Usuario -->
+      <div class="user-block">
+        <div class="avatar" id="userInitial">🙍‍♂️</div>
+        <div>
+          <p class="user-label">Sesión activa</p>
+          <p class="user-name font-display" id="userName"><span id="nombreEmpleado"></span></p>
+          <p class="user-rol"><span id="cargoEmpleado"></span></p>
+        </div>
+        <button class="cierre" onclick="cerrarSesion()">Cerrar Sesion</button>
+      </div>
+
+
+    </div>
+  </header>
+
+  <!-- contenido -->
+  <main>
+    <h1 class="main-title font-display">Panel del Gerente</h1>
+    <p class="main-subtitle">Visualiza reportes, gestiona empleados y muestra indicadores de ventas de la empresa</p>
+
+    <div class="content-grid" id="contentGrid">
+
+      <section class="space-card" id="space-1">
+            <div class="card-header">
+                <span class="dot"></span>
+                <h2 class="card-title font-display">Reportes</h2>
+            </div>
+
+            <p class="card-text">
+                Generar reportes Contables.
+            </p>
+            <br>
+            <div id="contenedor-img1"></div>
+            <br><br>
+
+            <p class="card-text">
+                Generar reportes de actividades
+            </p>
+            <br>
+            <div id="contenedor-img2">
+            </div>
+
+            <br><br>
+            <div class="botones">
+                <button class="descarga" onclick="mostrarRC()">Generar reporte contable</button>
+                <button class="descarga" onclick="mostrarRA()">Generar reporte de actividades</button>
+            </div>
+            
+
+            </div>
+  
+        </section>
+
+        <section class="space-card" id="space-2">
+            <div class="card-header">
+                <span class="dot"></span>
+                <h2 class="card-title font-display">Gestion Empleados</h2>
+            </div>
+
+            <p class="card-text">
+                Mostrar empleados de la empresa.
+            </p>
+            <BR><BR>
+            <button class="btn-lista" onclick="generar()">Clic aqui para generar lista</button>
+            <div id="contenedor">
+
+            </div>
+            
+        </section>
+
+      <section class="space-card" id="space-3">
+          <div class="card-header">
+              <span class="dot"></span>
+              <h2 class="card-title font-display">Indicadores de ventas</h2>
+          </div>
+
+          <p class="card-text">
+              Panel de indicadores de ventas de la empresa.
+          </p>
+            <img src="img/bannerVentas.png" alt="indicadores de ventas">
+          
+          
+      </section>
+
+    </div>
+  </main>
+
+  <script src="js/gerente.js"></script>
+
+</body>
+</html>
