@@ -208,3 +208,14 @@ function generarInformeArea() {
             "</div>";
     }
 }
+function cerrarSesion(){
+    document.getElementById("cerrar").click();
+}
+let letra=document.getElementById("userInitial")
+    letra.textContent=usuarioL.nombre[0].toUpperCase()
+
+    let user=document.getElementById("userName")
+    user.textContent=usuarioL.nombre
+
+    let post=document.getElementById("cargoEmpleado")
+    post.textContent=usuarioL.cargo

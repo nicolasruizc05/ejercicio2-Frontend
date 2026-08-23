@@ -36,6 +36,7 @@ const iniciar = () => {
             usuarioLogeado={
                 nombre:usuarios[i].nombre,
                 apellido:usuarios[i].apellido,
+                cargo:cargo,
                 email:dEmail
             }
             localStorage.setItem("usuarioLogeado",JSON.stringify(usuarioLogeado))
